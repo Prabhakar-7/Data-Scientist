@@ -359,3 +359,9 @@ zict @ file:///croot/zict_1695832839030/work
 zipp @ file:///croot/zipp_1704206909481/work
 zope.interface @ file:///work/ci_py311/zope.interface_1676905896080/work
 zstandard @ file:///work/ci_py311_2/zstandard_1679339489613/work
+streamlit==1.27.0
+numpy==1.27.0
+pandas==2.1.1
+scikit-learn==1.2.2
+matplotlib==3.8.1
+seaborn==0.12.3
