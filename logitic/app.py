@@ -1,8 +1,12 @@
+import os
 import streamlit as st
 import pandas as pd
 import pickle
 
 # Load the trained model
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "model.pkl")
+
 model = pickle.load(open("model.pkl", "rb"))
 
 st.title("Heart Disease Prediction (Reduced Features)")
