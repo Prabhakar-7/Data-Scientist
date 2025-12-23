@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -15,7 +16,10 @@ st.write("Predict song popularity using simple audio features")
 # ---------------------------
 # Load dataset
 # ---------------------------
-df = pd.read_csv("spotify_song_popularity.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, "spotify_song_popularity.csv")
+
+df = pd.read_csv(csv_path)
 
 features = ['danceability', 'energy', 'loudness', 'valence', 'tempo']
 X = df[features]
