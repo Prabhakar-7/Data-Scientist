@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -8,7 +9,10 @@ from sklearn.model_selection import train_test_split
 st.title("🧠 Social Network Ads – KNN Predictor")
 
 # Load data
-df = pd.read_csv("Social_Network_Ads.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, "Social_Network_Ads.csv")
+
+df = pd.read_csv(csv_path)
 
 X = df[['Age', 'EstimatedSalary']]
 y = df['Purchased']
