@@ -12,6 +12,10 @@ __pycache__/
 *.pyc
 
 # Model files
+*.pkl
 
 # Jupyter
 .ipynb_checkpoints/
+
+#OS
+.DS_STORE
