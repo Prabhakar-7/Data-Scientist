@@ -7,7 +7,12 @@ st.write("Enter patient details:")
 
 @st.cache_resource
 def train_model():
-    df = pd.read_csv("heart_dataset_5000.csv")
+    import os
+
+    BASE_DIR = os.path.dirname(__file__)
+    data_path = os.path.join(BASE_DIR, "heart_dataset_5000.csv")
+
+    df = pd.read_csv(data_path)
 
     X = df[["age", "cp", "chol", "bp"]]
     y = df["target"]
