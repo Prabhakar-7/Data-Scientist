@@ -1,12 +1,26 @@
 import streamlit as st
 import pandas as pd
-import pickle
-
-# Load model
-model = pickle.load(open("model.pkl", "rb"))
+from sklearn.tree import DecisionTreeClassifier
 
 st.title("❤️ Heart Disease Prediction (Reduced Features)")
 st.write("Enter patient details:")
+
+@st.cache_resource
+def train_model():
+    df = pd.read_csv("heart_dataset_5000.csv")
+
+    X = df[["age", "cp", "chol", "bp"]]
+    y = df["target"]
+
+    model = DecisionTreeClassifier(
+        random_state=42,
+        max_depth=5
+    )
+    model.fit(X, y)
+
+    return model
+
+model = train_model()
 
 # User inputs
 age = st.number_input("Age", 1, 120, 45)
