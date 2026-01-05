@@ -10,8 +10,12 @@ df.columns = ["label", "text"]
 df["label"] = df["label"].map({"ham": 0, "spam": 1})
 
 # Vectorization
-vectorizer = CountVectorizer()
-X = vectorizer.fit_transform(df["text"])
+vectorizer = CountVectorizer(
+    stop_words="english",
+    ngram_range=(1,2),
+    lowercase=True
+)
+X = vectorizer.fit_transform(df['text'])
 y = df["label"]
 
 # Train model
