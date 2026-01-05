@@ -1,8 +1,13 @@
 # app.py
 import streamlit as st
 import pickle
+import os
 
 # --- Load trained model and vectorizer ---
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
+VECTORIZER_PATH = os.path.join(BASE_DIR, "vectorizer.pkl")
 with open("model.pkl", "rb") as f:
     clf = pickle.load(f)
 
