@@ -2,3 +2,17 @@ test_env/
 __pycache__/
 *.pyc
 .env
+# Virtual environments
+venv/
+dsenv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Model files
+*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
