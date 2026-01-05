@@ -9,7 +9,6 @@ MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 VECTORIZER_PATH = os.path.join(BASE_DIR, "vectorizer.pkl")
 with open("model.pkl", "rb") as f:
     clf = pickle.load(f)
-=======
 import streamlit as st
 
 # -------------------------------
