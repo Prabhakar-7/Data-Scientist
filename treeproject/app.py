@@ -1,26 +1,17 @@
+import os
 import streamlit as st
-import pandas as pd
 import joblib
+import pandas as pd
 
 st.set_page_config(page_title="Decision Tree App", page_icon="🌳")
 
+MODEL_PATH = "decision_tree_model.pkl"
+
 @st.cache_resource
 def load_model():
-    return joblib.load("decision_tree_model.pkl")
+    if not os.path.exists(MODEL_PATH):
+        st.error("❌ Model file not found. Please check deployment.")
+        st.stop()
+    return joblib.load(MODEL_PATH)
 
 model = load_model()
-
-st.title("🌳 Decision Tree Prediction App")
-st.write("Predict customer purchase based on Age & Salary")
-
-age = st.number_input("Age", min_value=1, max_value=100, value=30)
-salary = st.number_input("Salary", min_value=1000, max_value=200000, value=35000)
-
-if st.button("Predict"):
-    input_df = pd.DataFrame([[age, salary]], columns=["Age", "Salary"])
-    prediction = model.predict(input_df)
-
-    if prediction[0] == 1:
-        st.success("✅ Customer WILL Purchase")
-    else:
-        st.error("❌ Customer will NOT Purchase")
