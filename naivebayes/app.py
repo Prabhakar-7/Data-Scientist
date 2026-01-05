@@ -19,7 +19,6 @@ st.set_page_config(
     page_icon="📧",
     layout="centered"
 )
->>>>>>> a67cd5b3 (Add Streamlit app and model files)
 
 st.title("📧 Email / SMS Spam Detection")
 st.write("Naive Bayes Machine Learning Model")
