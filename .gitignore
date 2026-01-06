@@ -38,3 +38,4 @@ treeproject/venv/
 # Models
 *.pkl
 *.joblib
+*.pkl
