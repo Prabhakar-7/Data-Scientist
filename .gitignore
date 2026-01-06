@@ -29,3 +29,12 @@ treeproject/venv/
 # Models
 *.pkl
 *.joblib
+# Virtual environments
+venv/
+env/
+.dsenv/
+treeproject/venv/
+
+# Models
+*.pkl
+*.joblib
