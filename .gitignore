@@ -20,3 +20,12 @@ __pycache__/
 #OS
 .DS_STORE
 *.pkl
+# Virtual environments
+venv/
+env/
+.dsenv/
+treeproject/venv/
+
+# Models
+*.pkl
+*.joblib
