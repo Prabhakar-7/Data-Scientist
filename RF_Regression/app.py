@@ -1,8 +1,16 @@
 import streamlit as st
-import pickle
 import pandas as pd
 
-model = pickle.load(open("ebike_model.pkl", "rb"))
+import os
+import pickle
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "ebike_model.pkl")
+
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
+
 
 st.title("⚡ E-Bike Range Prediction")
 
